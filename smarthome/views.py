@@ -4,8 +4,8 @@ from django.contrib.auth import authenticate, login
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from rest_framework import status
-from .serializers import DeviceSerializer, TodolistSerializer
-from .models import Datalist, Device
+from .serializers import  DeviceSerializer1, DeviceSerializer2, DeviceSerializer3, TodolistSerializer
+from .models import Datalist, Device1, Device2, Device3
 
 
 @api_view(['GET'])
@@ -110,26 +110,26 @@ def login(request):
             return Response(status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(['GET'])
-def all_devicelist(request):
-    alldata = Device.objects.all()
-    serializer = DeviceSerializer(alldata, many=True)
+def all_devicelist1(request):
+    alldata = Device1.objects.all()
+    serializer = DeviceSerializer1(alldata, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
 @api_view(['POST'])
-def post_devicelist(request):
+def post_devicelist1(request):
     if request.method == 'POST':
-        serializer = DeviceSerializer(data=request.data)
+        serializer = DeviceSerializer1(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['PUT'])
-def update_devicelist(request, TID):
-    todo1 = Device.objects.get(id=TID)
+def update_devicelist1(request, TID):
+    todo1 = Device1.objects.get(id=TID)
     if request.method == 'PUT':
         data = {}
-        serializer = DeviceSerializer(todo1, data=request.data)
+        serializer = DeviceSerializer1(todo1, data=request.data)
         if serializer.is_valid():
             serializer.save()
             data['status'] = 'updated'
@@ -137,8 +137,8 @@ def update_devicelist(request, TID):
         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['DELETE'])
-def delete_devicelist(request, TID):
-    todo1 = Device.objects.get(id=TID)
+def delete_devicelist1(request, TID):
+    todo1 = Device1.objects.get(id=TID)
 
     if request.method == 'DELETE':
         delete = todo1.delete()
@@ -149,7 +149,91 @@ def delete_devicelist(request, TID):
         else:
             data['status'] = 'failed'
             statuscode = status.HTTP_400_BAD_REQUEST
+        return Response(data=data, status=statuscode)
 
+@api_view(['GET'])
+def all_devicelist2(request):
+    alldata = Device2.objects.all()
+    serializer = DeviceSerializer2(alldata, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+def post_devicelist2(request):
+    if request.method == 'POST':
+        serializer = DeviceSerializer2(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['PUT'])
+def update_devicelist2(request, TID):
+    todo1 = Device2.objects.get(id=TID)
+    if request.method == 'PUT':
+        data = {}
+        serializer = DeviceSerializer2(todo1, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            data['status'] = 'updated'
+            return Response(data=data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['DELETE'])
+def delete_devicelist2(request, TID):
+    todo1 = Device2.objects.get(id=TID)
+
+    if request.method == 'DELETE':
+        delete = todo1.delete()
+        data = {}
+        if delete:
+            data['status'] = 'deleted'
+            statuscode = status.HTTP_200_OK
+        else:
+            data['status'] = 'failed'
+            statuscode = status.HTTP_400_BAD_REQUEST
+        return Response(data=data, status=statuscode)
+
+
+@api_view(['GET'])
+def all_devicelist3(request):
+    alldata = Device3.objects.all()
+    serializer = DeviceSerializer3(alldata, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
+
+@api_view(['POST'])
+def post_devicelist3(request):
+    if request.method == 'POST':
+        serializer = DeviceSerializer3(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['PUT'])
+def update_devicelist3(request, TID):
+    todo1 = Device3.objects.get(id=TID)
+    if request.method == 'PUT':
+        data = {}
+        serializer = DeviceSerializer3(todo1, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            data['status'] = 'updated'
+            return Response(data=data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['DELETE'])
+def delete_devicelist3(request, TID):
+    todo1 = Device3.objects.get(id=TID)
+
+    if request.method == 'DELETE':
+        delete = todo1.delete()
+        data = {}
+        if delete:
+            data['status'] = 'deleted'
+            statuscode = status.HTTP_200_OK
+        else:
+            data['status'] = 'failed'
+            statuscode = status.HTTP_400_BAD_REQUEST
         return Response(data=data, status=statuscode)
 
 data = [{'message': 'hello world'}, {'message': 'wellcome'},

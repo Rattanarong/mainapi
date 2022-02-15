@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Datalist, Device
+from .models import Datalist, Device1, Device2, Device3
 
 
 class TodolistSerializer(serializers.ModelSerializer):
@@ -7,7 +7,17 @@ class TodolistSerializer(serializers.ModelSerializer):
         model = Datalist
         fields = ('id', 'username', 'password', 'email', 'phone')
 
-class DeviceSerializer(serializers.ModelSerializer):
+class DeviceSerializer1(serializers.ModelSerializer):
     class Meta:
-        model = Device
-        fields = ('id','qrname1','qrname2','qrname3')
+        model = Device1
+        fields = ('id','qrname1')
+
+class DeviceSerializer2(serializers.ModelSerializer):
+    class Meta:
+        model = Device2
+        fields = ('id','qrname2')
+
+class DeviceSerializer3(serializers.ModelSerializer):
+    class Meta:
+        model = Device3
+        fields = ('id','qrname3')

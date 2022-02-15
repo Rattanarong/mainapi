@@ -6,7 +6,11 @@ class Datalist(models.Model):
     email = models.TextField(null=True, blank=True)
     phone = models.TextField(null=True, blank=True)
 
-class Device(models.Model):
+class Device1(models.Model):
     qrname1= models.TextField(blank = True, null = True)
+
+class Device2(models.Model):
     qrname2= models.TextField(blank = True, null = True)
+
+class Device3(models.Model):
     qrname3= models.TextField(blank = True, null = True)
