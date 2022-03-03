@@ -10,14 +10,15 @@ class TodolistSerializer(serializers.ModelSerializer):
 class DeviceSerializer1(serializers.ModelSerializer):
     class Meta:
         model = Device1
-        fields = ('id','qrname1')
+        fields = ('id','qrname1','namesw1')
 
 class DeviceSerializer2(serializers.ModelSerializer):
     class Meta:
         model = Device2
-        fields = ('id','qrname2')
+        fields = ('id','qrname2','namesw21','namesw22')
 
 class DeviceSerializer3(serializers.ModelSerializer):
     class Meta:
         model = Device3
-        fields = ('id','qrname3')
+        fields = ('id','qrname3','namesw31','namesw32','namesw33')
+
