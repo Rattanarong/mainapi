@@ -231,189 +231,24 @@ def delete_devicelist3(request, TID):
             data['status'] = 'failed'
             statuscode = status.HTTP_400_BAD_REQUEST
         return Response(data=data, status=statuscode)
-1
-# @api_view(['GET'])
-# def all_name1(request):
-#     alldata = name1.objects.all()
-#     serializer = nameSerializer1(alldata, many=True)
-#     return Response(serializer.data, status=status.HTTP_200_OK)
 
-
-# @api_view(['POST'])
-# def post_name1(request):
+# @api_view(['POST', 'GET'])
+# def readsw(request):
 #     if request.method == 'POST':
-#         serializer = nameSerializer1(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-
-# @api_view(['PUT'])
-# def update_name1(request, TID):
-#     todo = name1.objects.get(id=TID)
-#     if request.method == 'PUT':
-#         data = {}
-#         serializer = nameSerializer1(todo, data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             data['status'] = 'updated'
-#             return Response(data=data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-# @api_view(['GET'])
-# def all_name2(request):
-#     alldata = name2.objects.all()
-#     serializer = nameSerializer2(alldata, many=True)
-#     return Response(serializer.data, status=status.HTTP_200_OK)
-
-
-# @api_view(['POST'])
-# def post_name2(request):
-#     if request.method == 'POST':
-#         serializer = nameSerializer2(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-
-# @api_view(['PUT'])
-# def update_name2(request, TID):
-#     todo = name2.objects.get(id=TID)
-#     if request.method == 'PUT':
-#         data = {}
-#         serializer = nameSerializer2(todo, data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             data['status'] = 'updated'
-#             return Response(data=data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-# @api_view(['GET'])
-# def all_name3(request):
-#     alldata = name3.objects.all()
-#     serializer = nameSerializer3(alldata, many=True)
-#     return Response(serializer.data, status=status.HTTP_200_OK)
-
-
-# @api_view(['POST'])
-# def post_name3(request):
-#     if request.method == 'POST':
-#         serializer = nameSerializer3(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-
-# @api_view(['PUT'])
-# def update_name3(request, TID):
-#     todo = name3.objects.get(id=TID)
-#     if request.method == 'PUT':
-#         data = {}
-#         serializer = nameSerializer3(todo, data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             data['status'] = 'updated'
-#             return Response(data=data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-# @api_view(['GET'])
-# def all_name4(request):
-#     alldata = name4.objects.all()
-#     serializer = nameSerializer4(alldata, many=True)
-#     return Response(serializer.data, status=status.HTTP_200_OK)
-
-
-# @api_view(['POST'])
-# def post_name4(request):
-#     if request.method == 'POST':
-#         serializer = nameSerializer4(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-
-# @api_view(['PUT'])
-# def update_name4(request, TID):
-#     todo = name4.objects.get(id=TID)
-#     if request.method == 'PUT':
-#         data = {}
-#         serializer = nameSerializer4(todo, data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             data['status'] = 'updated'
-#             return Response(data=data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-# @api_view(['GET'])
-# def all_name5(request):
-#     alldata = name5.objects.all()
-#     serializer = nameSerializer5(alldata, many=True)
-#     return Response(serializer.data, status=status.HTTP_200_OK)
-
-
-# @api_view(['POST'])
-# def post_name5(request):
-#     if request.method == 'POST':
-#         serializer = nameSerializer5(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-
-# @api_view(['PUT'])
-# def update_name5(request, TID):
-#     todo = name5.objects.get(id=TID)
-#     if request.method == 'PUT':
-#         data = {}
-#         serializer =nameSerializer5(todo, data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             data['status'] = 'updated'
-#             return Response(data=data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-# @api_view(['GET'])
-# def all_name6(request):
-#     alldata = name6.objects.all()
-#     serializer = nameSerializer6(alldata, many=True)
-#     return Response(serializer.data, status=status.HTTP_200_OK)
-
-
-# @api_view(['POST'])
-# def post_name6(request):
-#     if request.method == 'POST':
-#         serializer = nameSerializer6(data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             return Response(serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-
-# @api_view(['PUT'])
-# def update_name6(request, TID):
-#     todo = name6.objects.get(id=TID)
-#     if request.method == 'PUT':
-#         data = {}
-#         serializer = nameSerializer6(todo, data=request.data)
-#         if serializer.is_valid():
-#             serializer.save()
-#             data['status'] = 'updated'
-#             return Response(data=data, status=status.HTTP_201_CREATED)
-#         return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)
-
-data = [{'message': 'hello world'}, {'message': 'wellcome'},
-        {
-        "title": "labtop คืออะไร?",
-        "subtitle": "คอมพิวเตอร์ คือ อุปกรณ์ที่ใช้สำหรับการคำนวณและทำงานอื่นๆ?",
-        "image_url": "https://raw.githubusercontent.com/Nuikittinan/BasicAPI/main/computer.jpg",
-        "detail": "คอมพิวเตอร์มาจากภาษาละตินว่า Computare ซึ่งหมายถึง การนับ หรือ การคำนวณพจนานุกรม ฉบับราชบัณฑิตยสถาน พ.ศ. 2525 ให้ความหมายของคอมพิวเตอร์ไว้ว่า/n/nเครื่องอิเล็กทรอนิกส์แบบอัตโนมัติ ทำหน้าที่เหมือนสมองกล ใช้สำหรับแก้ปัญหาต่างๆ ที่ง่ายและซับซ้อนโดยวิธีทางคณิตศาสตร์\n\nคอมพิวเตอร์ จึงเป็นเครื่องจักรอิเล็กทรอนิกส์ที่ถูกสร้างขึ้นเพื่อใช้ทำงานแทนมนุษย์ ในด้านการคิดคำนวณและสามารถจำข้อมูล ทั้งตัวเลขและตัวอักษรได้เพื่อการเรียกใช้งานในครั้งต่อไป  นอกจากนี้ ยังสามารถจัดการกับสัญลักษณ์ได้ด้วยความเร็วสูง โดยปฏิบัติตามขั้นตอนของโปรแกรม คอมพิวเตอร์ยังมีความสามารถในด้านต่างๆ อีกมาก อาทิเช่น การเปรียบเทียบทางตรรกศาสตร์ การรับส่งข้อมูล การจัดเก็บข้อมูลในตัวเครื่องและสามารถประมวลผลจากข้อมูลต่างๆ ได้ การทำงานของคอมพิวเตอร์"
-        }]
-
+#         data = request.data.copy()
+#         stsw1 = data.get('stsw1')
+#         # password = data.get('password')
+#         try:
+#             queryset = Device1.objects.get(stsw1 = stsw1)
+#             print(queryset)
+#             if queryset.stsw1 == "true":
+#                 print(queryset.stsw1)
+#                 return Response(queryset.stsw1 == "true",status = status.HTTP_200_OK)
+#             else:
+#                 print(queryset.stsw1)
+#                 return Response(queryset.stsw1 == "false",status = status.HTTP_404_NOT_FOUND)
+#         except:
+#             return Response(status = status.HTTP_400_BAD_REQUEST)
 
 def Home(request):
     return JsonResponse(data=data, safe=False, json_dumps_params={'ensure_ascii': False})

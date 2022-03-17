@@ -21,4 +21,3 @@ class DeviceSerializer3(serializers.ModelSerializer):
     class Meta:
         model = Device3
         fields = ('id','qrname3','namesw31','namesw32','namesw33')
-

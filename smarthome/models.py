@@ -20,4 +20,3 @@ class Device3(models.Model):
     namesw31= models.TextField(blank = True, null = True)
     namesw32= models.TextField(blank = True, null = True)
     namesw33= models.TextField(blank = True, null = True)
-
